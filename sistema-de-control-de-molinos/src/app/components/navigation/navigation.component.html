@@ -132,9 +132,10 @@
                         <a class="nav-link" [routerLink]="['/users/list']">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" *ngIf="this.status && !this.isRegular" [routerLink]="['/silos']">Silos</a>
+                        <a class="nav-link" *ngIf="this.status && !this.isRegular" [routerLink]="['/estadisticas']">Estadisticas</a>
                     </li>
-
+                    <li class="nav-item">
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" *ngIf="this.status && !this.isRegular" [routerLink]="['/catalogo']">Catologo</a>
                     </li>
@@ -144,6 +145,7 @@
                     <li class="nav-item">
                         <a class="nav-link" *ngIf="this.status && this.isRegular" [routerLink]="['/pedidos-list']">Mis Pedidos</a>
                     </li>
+                   
 
                 </ul>
                 <div class="dropleft">

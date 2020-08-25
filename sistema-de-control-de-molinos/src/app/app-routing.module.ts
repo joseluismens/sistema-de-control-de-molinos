@@ -25,6 +25,7 @@ import { CreatePedidosComponent } from './components/pedidos/create-pedidos/crea
 import { ListPedidosComponent } from './components/pedidos/list-pedidos/list-pedidos.component';
 import { PedidosListComponent } from './components/clientes/pedidos-list/pedidos-list.component';
 import { ListUserComponent } from './components/user/list-user/list-user.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 
 const routes: Routes = [
   {
@@ -73,6 +74,11 @@ const routes: Routes = [
     component: ListUserComponent, 
     canActivate: [AuthGuard,UserEncargadoGuard]
   },
+  {
+    path:'estadisticas',
+    component:EstadisticasComponent
+  }  
+  ,
   {
     path: 'pesajes/listar-pesaje', 
     component: ListarPesajesComponent,
