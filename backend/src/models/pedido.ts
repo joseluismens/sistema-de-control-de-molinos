@@ -3,6 +3,8 @@ import {Schema, model ,Document} from 'mongoose';
 export interface IPedido extends Document{
     name:string;
     producto:string;
+    nameClient:string;
+    nameProducto:string;
     cliente:string;
     cantidad:number;
     precio:number;
@@ -22,6 +24,10 @@ const schema = new Schema({
         required:true
     },
     nameClient:{
+        type:String,
+        required:true
+    },
+    nameProducto:{
         type:String,
         required:true
     },

@@ -48,15 +48,15 @@ export async function createPedido(req:Request,res:Response){
     const {producto,cliente,cantidad,precio}=req.body;
     
     
-    var product = await Photo.findById(producto);
+    var product = await Photo.find({_id:producto},{title:1});
     if(!product) return res.status(404).json("El producto no existe");
-
+    let nameProducto = product[0].title;
     var client= await User.find({_id:cliente},{_id:0,name:1});
     if(!client) return res.status(404).json("El cliente no existe");
 
     let nameClient=client[0].name;
     
-    const newPedido= {producto,nameClient,cliente,cantidad,precio};
+    const newPedido= {producto,nameClient,nameProducto,cliente,cantidad,precio};
     const pedido= new Pedido(newPedido);
     if(!pedido) return res.status(400).json("Error al registrar el Pedido");
     await pedido.save();
