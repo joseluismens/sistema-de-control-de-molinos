@@ -35,3 +35,23 @@
 <div>
   <button type="button" class="btn btn-warning" (click)="aplicar(filtered.value,cov.value,mes.value)">Aplicar</button>
 </div>
+
+<div>
+
+<ngx-charts-bar-vertical
+  [view]="[1000,400]"
+  [results]="saleData"
+  [xAxisLabel]="'Meses'"
+  [legendTitle]="'Compras de Harina Integral'"
+  [yAxisLabel]="'Cantidad (Kg)'"
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxis]="true"
+  [yAxis]="true"
+  [gradient]="true">
+</ngx-charts-bar-vertical>
+
+
+
+</div>

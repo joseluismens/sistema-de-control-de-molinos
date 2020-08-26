@@ -10,10 +10,13 @@ import { IfStmt } from '@angular/compiler';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
+
+
   productos:any[];
   pesajes:any[];
   meses:any[];
   constructor(private photoService:PhotoService,private pesajeService:PesajeService) { }
+  saleData: any[];
 
   ngOnInit(): void {
     this.photoService.getPhotos().subscribe(res=>{
@@ -25,19 +28,23 @@ export class StatisticsComponent implements OnInit {
     });
 
   }
+
   aplicar(value:string,cov:string,mes:number):void{
 
     for (let index = 0; index < this.pesajes.length; index++) {
       if(this.pesajes[index].tipoTransaccion==cov){
         if(this.pesajes[index].tipoProducto==value){
           let dateP = new Date(this.pesajes[index].createdAt);
-          if(dateP.getMonth()+1 == mes){
-            console.log(this.pesajes[index]);
-          }
+          console.log("si");
+           this.saleData=[
+          { name: this.pesajes[index].tipoPorducto, value:this.pesajes[index].pesoSalida-this.pesajes[index].pesoEntrada}];
+          this.saleData=[this.saleData];
+          window.location.reload();
         }
       }
-
     }
+
   }
+
 
 }

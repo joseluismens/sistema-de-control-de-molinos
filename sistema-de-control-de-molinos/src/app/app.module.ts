@@ -40,6 +40,9 @@ import { PedidosListComponent } from './components/clientes/pedidos-list/pedidos
 import { ListUserComponent } from './components/user/list-user/list-user.component';
 import {ProgressBarModule} from "angular-progress-bar";
 import { StatisticsComponent } from './components/statistics/statistics.component'
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -75,6 +78,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     BrowserModule,
     ProgressBarModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -84,7 +88,8 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     CommonModule,
     SidebarModule.forRoot(),
     NgxPaginationModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    NgxChartsModule
   ],
   providers: [AuthGuard,{
     provide:HTTP_INTERCEPTORS,
