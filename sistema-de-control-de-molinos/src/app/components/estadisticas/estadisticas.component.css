@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin-top: 30px;
+    margin: 0 auto;
+
+}
+.estadisticasActual{
+    margin-top: 30px;
+    overflow-x: auto;
+}
+#actual {
+    background: white;
+}
+#producto{
+    width: auto;
+    color: black;
+}
+
+
+.card{
+    margin: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.btn-group{
+    margin-top: 10px;
+}
+.btn-group *{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: auto;
+}
+.card-header{
+    padding:5px
+}

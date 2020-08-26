@@ -1,0 +1,58 @@
+<div class="container mx-auto ">
+    <h3 class="text-center" style="margin-top:45px">Área de estadisticas</h3>
+  <div class="">
+    <div class=" mx-auto estadisticasActual col-9">
+        <div class="card">
+            <div class="card-header">
+                <h4>Estadisticas anuales por producto</h4>
+            </div>
+            <div class="card-body">
+                <div class="btn-group">
+                    <select  class="form-control"[(ngModel)]="selected">
+                          <option value =''disabled selected>Seleccione una opción </option>
+      
+                          <option *ngFor="let photo of photos" [ngValue]="photo._id">{{photo.title}}</option>
+                      </select>
+                      <button class="btn btn-primary" id="btnG" [disabled]="!selected" type="button" (click)="generarEstadisticas()">Generar </button>
+              </div>
+              <div style="display: block; width: 700px; margin-top: 30px;">
+                  <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                      [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType" id="actual">
+                  </canvas>
+              </div>
+            </div>
+        </div>
+      
+
+    </div>
+    <div class="mx-auto estadisticasActual col-9">       
+        <div class="card">
+            <div class="card-header">
+                <h4>Estadisticas de los ultimos 5 años</h4>
+            </div>
+            <div class="card-body">
+                <div class="btn-group">
+                    <select  class="form-control"[(ngModel)]="selected2">
+                          <option value =''disabled selected>Seleccione una opción </option>
+                          <option *ngFor="let photo of photos" [ngValue]="photo._id">{{photo.title}}</option>
+                      </select>
+                        <select  class="form-control" [(ngModel)]="selectedYear">
+                          <option value =''disabled selected>Seleccione una opción </option>
+      
+                          <option *ngFor="let year of [nowYear,nowYear-1,nowYear-2,nowYear-3,nowYear-4]" [ngValue]="year">{{year}}</option>
+                      </select>
+                      <button class="btn btn-primary" [disabled]="!selected2 || !selectedYear" type="button" (click)="generarAnuales()">Generar </button>
+              </div>
+              <div style="display: block; width: 700px; margin-top: 30px;">
+                  <canvas baseChart [datasets]="barChartData2" [labels]="barChartLabels" [options]="barChartOptions"
+                      [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType" id="actual">
+                  </canvas>
+              </div>
+            </div>
+        </div>
+      
+
+    </div>
+  </div>
+
+</div>

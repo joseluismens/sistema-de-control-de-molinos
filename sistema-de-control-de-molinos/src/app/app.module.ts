@@ -38,7 +38,9 @@ import { CreatePedidosComponent } from './components/pedidos/create-pedidos/crea
 import { ListPedidosComponent } from './components/pedidos/list-pedidos/list-pedidos.component';
 import { PedidosListComponent } from './components/clientes/pedidos-list/pedidos-list.component';
 import { ListUserComponent } from './components/user/list-user/list-user.component';
-import {ProgressBarModule} from "angular-progress-bar"
+import {ProgressBarModule} from "angular-progress-bar";
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component'
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -65,8 +67,8 @@ import {ProgressBarModule} from "angular-progress-bar"
     CreatePedidosComponent,
     ListPedidosComponent,
     PedidosListComponent,
-    ListUserComponent
-    
+    ListUserComponent,
+    EstadisticasComponent    
     
     
   ],
@@ -84,6 +86,8 @@ import {ProgressBarModule} from "angular-progress-bar"
     SidebarModule.forRoot(),
     NgxPaginationModule,
     GoogleMapsModule,
+    ChartsModule
+
   
   ],
   providers: [AuthGuard,{

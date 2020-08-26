@@ -1,8 +1,10 @@
 export interface IPedido{
-    _id?:String,
-    name:String
-    producto:String,
-    cliente:String,
-    cantidad:Number,
-    precio:Number
+    _id?:string,
+    name:string,
+    nameProducto:string,
+    producto:string,
+    cliente:string,
+    cantidad:number,
+    precio:number,
+    createdAt:Date;
 }
