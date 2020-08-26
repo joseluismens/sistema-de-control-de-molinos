@@ -1,3 +1,4 @@
 package-lock.json
 ./uploads
 ./backend/node_modules
+.idea/
