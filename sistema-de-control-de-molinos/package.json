@@ -35,7 +35,7 @@
     "html2pdf.js": "^0.9.2",
     "jquery": "^3.5.1",
     "jsonwebtoken": "^8.5.1",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.5.9",
     "ng-sidebar": "^9.4.2",
     "ng2-charts": "^2.4.0",
